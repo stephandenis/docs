@@ -3,10 +3,13 @@ import Header from "../components/Header";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div>
       <Head>
         <title>Docs Remake</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          href="https://www.gstatic.com/images/branding/product/2x/docs_2020q4_48dp.png"
+        />
       </Head>
 
       <Header />
