@@ -5,6 +5,7 @@ import { db } from "../../firebase";
 import { useDocumentOnce } from "react-firebase-hooks/firestore";
 import { getSession, useSession, signOut } from "next-auth/client";
 import Login from "../../components/Login";
+import TextEditor from "../../components/TextEditor";
 
 const Doc = () => {
   const [session] = useSession();
@@ -60,8 +61,21 @@ const Doc = () => {
           alt=""
         />
       </header>
+
+      <TextEditor />
     </div>
   );
 };
 
 export default Doc;
+
+// fetch the user beforehand to prevent async reloading
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  return {
+    props: {
+      session,
+    },
+  };
+}
