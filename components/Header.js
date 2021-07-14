@@ -45,7 +45,7 @@ const Header = () => {
       <img
         onClick={signOut}
         loading="lazy"
-        className="hidden lg:flex cursor-pointer h-12 w-12 rounded-full ml-2"
+        className="cursor-pointer h-12 w-12 rounded-full ml-2"
         src={session?.user?.image}
         alt=""
       />
